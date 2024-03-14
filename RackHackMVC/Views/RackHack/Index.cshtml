@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@model RackHackMVC.ViewModels.RackHackViewModel
+
+@{
+    ViewData["Title"] = "Pool Ball Rack";
+}
+
+
+<h1>Pool Ball Rack</h1>
+
+<div class="pool-ball-rack">
+    
+    @foreach (var ballNumber in Model.PoolBalls)
+    {
+        <img src="~/images/poolballs/poolball@ballNumber.png" alt="Pool Ball @ballNumber" />
+    }
+
+</div>
+
+
+@*
+
+
+*@
+
+
+
+@*
+
+one ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUN04tcfURC6VlKX?e=5wZsiu
+
+
+two ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUXfaxLGKkxAPBSx?e=fbesg1
+
+
+three ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUkrYIjP9t6j39lP?e=asYGBQ
+
+
+four ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUpU36El0iBCh-xX?e=AmWCOs
+
+
+five ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUtuxGDpx_g4c_1Z?e=YKcJax
+
+
+six ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmUyJlm80Ov5QlvnV?e=lDnm0k
+
+
+seven ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmU0e5jw-rXF-_YpT?e=aVP099
+
+
+eight ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmU_NVEDhqfKVODV5?e=fu9t8b
+
+
+nine ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVAr6qbo9IHxntCb?e=0dErcl
+
+
+ten ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVFKKORiMLWZkS1F?e=xmdpGs
+
+
+eleven ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVIWd8fzNStF0e6X?e=3rTq2f
+
+
+twelve ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVTVUPe-bpz5mc4y?e=8sCzt8
+
+
+thirteen ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVX7wzBiQGUnPs8-?e=hi9Xeu
+
+
+fourteen ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVZxKi-O7nDhPjFa?e=XCP3KM
+
+
+fifteen ball
+https://1drv.ms/i/s!AgDkJLA0Vt5TmVhhNPkNEi50sl9f?e=bk9vWh
+
+
+
+*@
