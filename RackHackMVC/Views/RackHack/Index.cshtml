@@ -2,8 +2,11 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
+@*
 
 @model RackHackMVC.ViewModels.RackHackViewModel
+
+*@
 
 @{
     ViewData["Title"] = "Pool Ball Rack";
@@ -12,84 +15,375 @@
 
 <h1>Pool Ball Rack</h1>
 
+
 <div class="pool-ball-rack">
-    
+
+    @*
     @foreach (var ballNumber in Model.PoolBalls)
     {
-        <img src="~/images/poolballs/poolball@ballNumber.png" alt="Pool Ball @ballNumber" />
+        <img src="~/Images/@(ballNumber)_ball.jpg" alt="Pool Ball @ballNumber" />
     }
+    *@
+
+    <style>
+
+        .wrapper{
+        
+        }
+
+    .rack
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+
+    .row
+    {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+    }
+
+
+    .ball
+    {
+        width: 50px;
+        height: 50px;
+        /*background-color: #000;*/
+        border-radius: 50%;
+        margin: 5px;
+        display: flex;
+        /*gap: 10px;*/
+    }
+
+    .row:nth-child(2) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .row:nth-child(3) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .row:nth-child(4) {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .row:nth-child(5)
+    {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+
+</style>
+
+
+
+
+
+
+
+
+    @* 8-ball *@
+    
+    <div class="wrapper8">
+
+        @*first row*@
+        <div class="row">
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[0]_ball.jpg">
+            </div>
+
+        </div>
+
+
+
+        @*second row*@
+        <div class="row">
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[1]_ball.jpg">
+            </div>
+
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[2]_ball.jpg">
+            </div>
+            
+        
+        </div>
+
+
+
+
+        @*third row*@
+        <div class="row">
+
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[3]_ball.jpg">
+            </div>
+
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[4]_ball.jpg">
+            </div>
+
+
+            <div class="ball">
+                <img src="\Images\@Model.PoolBalls[5]_ball.jpg">
+            </div>
+
+
+       
+        </div>
+
+
+
+
+        @*fourth row*@
+
+
+        <div class="row">
+
+            @*
+
+            8-ball
+            &
+            10-ball
+            
+            *@
+
+
+            @if (Model.EightBallRackHackClick || Model.EightBallRackHackDifferentWingsClick ||
+            Model.TenBallRackHackClick || Model.TenBallRackHack2And3OnWingsClick)
+            {
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[6]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[7]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[8]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[9]_ball.jpg">
+                </div>
+
+            }
+
+
+
+
+
+            @if (Model.NineBallRackHackClick || Model.NineBallRackHack2AtBackClick 
+            || Model.NineBallRackHack2ProhibitedFromBackClick)
+            {
+                <div class="ball">
+
+                    <img src="\images\@Model.PoolBalls[6]_ball.jpg">
+
+                </div>
+
+
+                <div class="ball">
+
+                    <img src="\images\@Model.PoolBalls[7]_ball.jpg">
+
+                </div>
+            }
+
+
+        </div>
+
+
+
+
+
+
+            @* fifth row *@
+            <div class="row">
+
+
+
+            @if (Model.EightBallRackHackClick || Model.EightBallRackHackDifferentWingsClick)
+            {
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[10]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[11]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[12]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[13]_ball.jpg">
+                </div>
+
+
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[14]_ball.jpg">
+                </div>
+
+            }
+
+            
+
+
+            @if (Model.NineBallRackHackClick || Model.NineBallRackHack2AtBackClick
+            || Model.NineBallRackHack2ProhibitedFromBackClick)
+
+            {
+                <div class="ball">
+                    <img src="\Images\@Model.PoolBalls[8]_ball.jpg">
+                </div>
+            }
+
+
+
+            @if(Model.TenBallRackHackClick || Model.TenBallRackHack2And3OnWingsClick)
+            {
+                @*
+
+                    The fifth row in 10-ball does not exist
+
+                *@
+            }
+
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div>
+
+
+        <form asp-controller="RackHack" asp-action="EightBallRackHack">
+
+        <button type="submit"> 8-ball </button>
+
+        </form>     
+
+    </div>
+    
+
+
+
+
+    <div>
+
+        <form asp-controller="RackHack" asp-action="EightBallRackHackDifferentWings">
+
+            <button type="submit"> 8-ball with opposite groups on wings </button>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div>
+
+        <form asp-controller="RackHack" asp-action="NineBallRackHack">
+
+            <button type="submit"> 9-ball </button>
+
+        </form>
+
+    </div>
+    
+    
+    
+    <div>
+
+        <form asp-controller="RackHack" asp-action="NineBallRackHack2AtBack">
+
+            <button type="submit"> 9-ball. 2 must go at the back </button>
+
+        </form>
+
+    </div>
+
+
+
+
+
+    <div>
+
+        <form asp-controller="RackHack" asp-action="NineBallRackHack2ProhibitedFromBack">
+
+            <button type="submit"> 9-ball. 2 is prohibited from the back  </button>
+
+        </form>
+
+    </div>
+
+
+    <div>
+
+
+        <form asp-controller="RackHack" asp-action="TenBallRackHack">
+
+            <button type="submit"> 10-ball </button>
+
+        </form>
+
+    </div>
+
+
+
+    <div>
+
+
+        <form asp-controller="RackHack" asp-action="TenBallRackHack2And3OnWings">
+
+            <button type="submit"> 10-ball. Put 2 & 3 on wings </button>
+
+        </form>
+
+
+
+        @*
+        <img src="\Images\1_ball.jpg" alt="1 ball">
+        *@
+
+
+
+    </div>
 
 </div>
 
 
-@*
-
-
-*@
-
-
-
-@*
-
-one ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUN04tcfURC6VlKX?e=5wZsiu
-
-
-two ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUXfaxLGKkxAPBSx?e=fbesg1
-
-
-three ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUkrYIjP9t6j39lP?e=asYGBQ
-
-
-four ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUpU36El0iBCh-xX?e=AmWCOs
-
-
-five ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUtuxGDpx_g4c_1Z?e=YKcJax
-
-
-six ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmUyJlm80Ov5QlvnV?e=lDnm0k
-
-
-seven ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmU0e5jw-rXF-_YpT?e=aVP099
-
-
-eight ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmU_NVEDhqfKVODV5?e=fu9t8b
-
-
-nine ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVAr6qbo9IHxntCb?e=0dErcl
-
-
-ten ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVFKKORiMLWZkS1F?e=xmdpGs
-
-
-eleven ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVIWd8fzNStF0e6X?e=3rTq2f
-
-
-twelve ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVTVUPe-bpz5mc4y?e=8sCzt8
-
-
-thirteen ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVX7wzBiQGUnPs8-?e=hi9Xeu
-
-
-fourteen ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVZxKi-O7nDhPjFa?e=XCP3KM
-
-
-fifteen ball
-https://1drv.ms/i/s!AgDkJLA0Vt5TmVhhNPkNEi50sl9f?e=bk9vWh
-
-
-
-*@
